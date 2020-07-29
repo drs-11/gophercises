@@ -27,8 +27,8 @@ func getRecords(f string) [][]string {
 
 }
 func main() {
-	quizFile := flag.String("csv", "problems.csv", "a csv file which contains q n a")
-	timeLimit := flag.Int("limit", 30, "Time limit for")
+	quizFile := flag.String("csv", "problems.csv", "a csv file which contains questions and answers")
+	timeLimit := flag.Int("limit", 30, "time limit for quiz")
 	flag.Parse()
 
 	timer := time.NewTimer(time.Duration(*timeLimit) * time.Second)
