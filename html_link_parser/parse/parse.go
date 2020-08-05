@@ -35,6 +35,15 @@ func GetLinks(r io.Reader) []Link {
 	return links
 }
 
+func GetLinksStrings(r io.Reader) []string {
+	l := GetLinks(r)
+	links := make([]string, 0)
+	for _, link := range l {
+		links = append(links, link.Href)
+	}
+	return links
+}
+
 func buildLink(n *html.Node, links *[]Link) {
 	if n.Type == html.ElementNode && n.Data == "a" {
 		link := Link{}
